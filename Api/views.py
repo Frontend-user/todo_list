@@ -34,6 +34,7 @@ def task_delete(request, task_to_delete_id):
     task_to_delete.delete()
     return redirect(f'/lists/{list_id}/open/')
 
+
 def task_status(request, task_to_change_status, list_id):
     task = TaskModel.objects.filter(id=task_to_change_status).first()
     if task.is_completed == True:
@@ -70,4 +71,22 @@ def list_delete(request, list_to_delete_id):
 def list_open(request, list_id):
     list_to_open = ListModel.objects.get(id=list_id)
     list_tasks = TaskModel.objects.filter(list_id=list_to_open.id)
-    return render(request, 'Api/list_open.html', {'list_to_open': list_to_open.dict(), 'tasks': list_tasks})
+    return render(request, 'Api/list_open.html',
+                  {'list_to_open': list_to_open.dict(), 'tasks': list_tasks, 'list_id': list_id, })
+
+
+def base(request):
+    return render('Api/base.html')
+
+
+def lists_to_move(request, task_to_move_id):
+    lists = ListModel.objects.filter()
+    return render(request, 'Api/move.html', {'lists': lists, 'task_to_move_id': task_to_move_id})
+
+
+def task_move_to_list(request, list_where_move_id, task_to_move_id):
+    task = TaskModel.objects.filter(id=task_to_move_id).first()
+    task.list_id = list_where_move_id
+    task.save()
+    return redirect('lists')
+

@@ -1,19 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<form action="/lists/create/" method="post">
+{% extends "Api/base.html" %}
+ {% block nav %}
+
+<a href="/lists/">Списки</a>
+ {% endblock %}
+ {% block content %}
+     <form action="/lists/create/" method="post">
       {% csrf_token %}
     <input type="text" name="name">
     <input type="submit" value="Добавить список">
     <br>
       {% for l in lists %}
+
           <p>Список {{ l.name }}</p>
           <a href="/lists/{{ l.id }}/open/">Открыть список</a>
           <a href="/lists/{{ l.id }}/delete/">Удалить список</a>
@@ -21,5 +18,6 @@
 
     {% endfor %}
 </form>
-</body>
-</html>
+ {% endblock %}
+
+

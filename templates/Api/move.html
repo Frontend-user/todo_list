@@ -1,0 +1,14 @@
+{% extends "Api/base.html" %}
+
+ {% block nav %}
+
+<a href="/lists/">Списки</a>
+ {% endblock %}
+ {% block content %}
+      {% for l in lists %}
+          {{ list_where_move_id }}
+          <p>Список {{ l.name }}</p>
+          {{ l.id }}
+          <a href="/lists/{{ l.id }}/list_move/{{ task_to_move_id  }}">переместить сюда</a>
+    {% endfor %}
+ {% endblock %}

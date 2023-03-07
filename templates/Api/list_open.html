@@ -1,16 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends "Api/base.html" %}
+ {% block nav %}
+
+<a href="/lists/">Списки</a>
+ {% endblock %}
+ {% block content %}
 
 <form action="/tasks/create/{{ list_to_open.id }}/" method="post">
     {% csrf_token %}
+    <h1> Список ID == {{ list_id }} </h1>
     <input type="text" name="text">
     <input type="submit" value="Добавить задачу">
 </form>
@@ -47,6 +44,7 @@
 
             {#<div  style="width: 30px; height: 30px; border-radius: 20px; background: green; transition: all 1s ease-out;"></div>#}
             <td style="border: 1px solid grey;"><a href="/tasks/{{ t.id }}/delete/">Удалить задачу</a></td>
+          <td style="border: 1px solid grey;"><a href="/tasks/{{ t.id }}/move/">Переместить задачу</a></td>
 
 
         </tr>
@@ -54,22 +52,6 @@
 
 
 </table>
-{#<table >#}
-{#  <tr>#}
-{#    <td>Firstname</td>#}
-{#    <td>Lastname</td>#}
-{#    <td>Age</td>#}
-{#  </tr>#}
-{#  <tr>#}
-{#    <td>Jill</td>#}
-{#    <td>Smith</td>#}
-{#    <td>50</td>#}
-{#  </tr>#}
-{#  <tr>#}
-{#    <td>Eve</td>#}
-{#    <td>Jackson</td>#}
-{#    <td>94</td>#}
-{#  </tr>#}
-{#</table>#}
+ {% endblock %}
 </body>
 </html>
