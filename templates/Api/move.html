@@ -2,13 +2,13 @@
 
  {% block nav %}
 
-<a href="/lists/" style=" color: #99970d;  font-size: 30px; font-weight: 500;  text-decoration: none; cursor: pointer;">Списки</a>
+<a href="/lists/" class="list_move_lists">Списки</a>
  {% endblock %}
  {% block content %}
       {% for l in lists %}
           {{ list_where_move_id }}
-          <p style="color: green;">Список {{ l.name }}</p>
+          <p class="list_id_text">Список {{ l.name }}</p>
 {#          {{ l.id }}#}
-          <a  href="/lists/{{ l.id }}/list_move/{{ task_to_move_id  }}" style=" color: orangered; text-decoration: none;  padding: 0px 20px 0px 20px;" >переместить сюда</a>
+          <a  href="/lists/{{ l.id }}/list_move/{{ task_to_move_id  }}" class="list_move_form">переместить сюда</a>
     {% endfor %}
  {% endblock %}

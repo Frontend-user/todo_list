@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-{#    {% load static %}#}
-{#    <link rel="stylesheet" href="{% static "styles.css" %}">#}
+{% load static %}
+    <link rel="stylesheet" href="{% static "styles.css" %}">
 </head>
-<body style="background-color:   #040e12; height: 100vh; margin: 0px;">
+<body >
 <div id="app_body">
     <div id="sidebar">
             {% block nav %}
             {% endblock %}
     </div>
-    <div id="content" style=" color: #99970d;  font-size: 25px; text-decoration: none; cursor: pointer;">
+    <div id="content">
         {% block content %}{% endblock %}
     </div>
 </div>

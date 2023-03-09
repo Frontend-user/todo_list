@@ -1,0 +1,148 @@
+body {
+    background-color: #040e12;
+    height: 100vh;
+    margin: 0px;
+}
+
+#content {
+    color: #99970d;
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.index_spiski {
+    margin-left: 500px;
+    color: #99970d;
+    font-size: 180px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list_spiski {
+    color: #99970d;
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list {
+    color: blue;
+    text-decoration: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.list_name {
+    color: yellow;
+    text-decoration: none;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.list_open {
+    color: green;
+    text-decoration: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.list_delete {
+    color: red;
+    text-decoration: none;
+    font-size: 40px;
+    cursor: pointer;
+    margin-left: 20px
+}
+
+.list_input {
+    font-size: 40px;
+    color: green;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    height: 100px;
+    width: 800px
+}
+
+.list_submit {
+    font-size: 40px;
+    background-color: grey;
+    cursor: pointer;
+    color: orange;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    height: 100px;
+    width: 400px;
+}
+
+.list_id_text {
+    color: green;
+}
+
+.list_open_lists {
+    color: #99970d;
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list_move_lists {
+    color: #99970d;
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list_move_form {
+    color: orangered;
+    text-decoration: none;
+    padding: 0px 20px 0px 20px;
+}
+
+.task_move {
+    color: yellow;
+    text-decoration: none;
+    padding: 0px 20px 0px 20px;
+}
+
+.task_delete {
+    color: red;
+    text-decoration: none;
+    padding: 0px 20px 0px 20px;
+}
+
+.task_change {
+    text-decoration: none;
+    color: orange;
+    padding: 0px 20px 0px 20px;
+}
+
+.task_not_done {
+
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background: orangered;: yellow;
+}
+
+.task_done {
+
+    width: 30px;
+    margin: 0px 10px 0px 10px;
+    height: 30px;
+    border-radius: 20px;
+    background: green;
+    color: greenyellow;
+}
+
+.task_text {
+    color: black;
+    padding: 0px 20px 0px 20px;
+
+}

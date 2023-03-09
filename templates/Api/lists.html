@@ -2,20 +2,22 @@
     {% extends "Api/base.html" %}
 
     {% block nav %}
-        <a  style=" color: #99970d;  font-size: 30px; font-weight: 500;  text-decoration: none; cursor: pointer;" href="/lists/">Списки</a>
+        <a class="list_spiski" href="/lists/">Списки</a>
     {% endblock %}
     {% block content %}
 
         <form action="/lists/create/" method="post">
             {% csrf_token %}
-            <input type="text" name="name" style="font-size:40px;  color: green; border: none; padding: 5px 10px; border-radius: 15px; height: 100px; width: 800px;">
-            <input type="submit" value="Добавить список" style="font-size:40px; background-color: grey; cursor: pointer;  color: orange; border: none; padding: 5px 10px; border-radius: 15px; height: 100px; width: 400px;">
+            <input type="text" name="name"
+                   class="list_input">
+            <input type="submit" value="Добавить список"
+                   class="list_submit">
             <br>
             {% for l in lists %}
 
-                <p><span style="color: blue; text-decoration: none; font-size: 40px;cursor: pointer;">Список</span><span style="color: yellow; text-decoration: none; font-size: 60px;cursor: pointer;"> {{ l.name }}</span></p>
-                <a href="/lists/{{ l.id }}/open/" style="color: green; text-decoration: none; font-size: 40px;cursor: pointer; ">Открыть список</a>
-                <a href="/lists/{{ l.id }}/delete/" style="color: red; text-decoration: none; font-size: 40px; cursor: pointer; margin-left: 20px;">Удалить список</a>
+                <p><span class="list">Список</span><span class="list_name"> {{ l.name }}</span></p>
+                <a href="/lists/{{ l.id }}/open/" class="list_open">Открыть список</a>
+                <a href="/lists/{{ l.id }}/delete/" class="list_delete">Удалить список</a>
 
 
             {% endfor %}
@@ -23,27 +25,3 @@
 
     {% endblock %}
 </div>
-
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <title>{% block title %}{% endblock %}</title>#}
-{#    {% load static %}#}
-{#    <link rel="stylesheet" href="{% static "styles.css" %}">#}
-{#</head>#}
-{#<body style="background-color:  #BEEFED; height: 100vh; margin: 0px;  ">#}
-{#<div id="app_body">#}
-{#    <div id="sidebar">#}
-{#        <ul  style="color: #99970d;  font-size: 25px;   text-decoration: none; cursor: pointer;>#}
-{#            {% block nav %}{% endblock %}#}
-{#        </ul>#}
-{#    </div>#}
-{#                <div id=" content " > </div>#}
-{#        {% block content %}{% endblock %}#}
-{#     </div>#}
-{#    </div>#}
-{#</div>#}
-{#</body>#}
-{#</html>#}
-
-
