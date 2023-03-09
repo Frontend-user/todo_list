@@ -1,15 +1,15 @@
 {% extends "Api/base.html" %}
  {% block nav %}
 
-<a href="/lists/">Списки</a>
+<a href="/lists/" style=" color: #99970d;  font-size: 30px; font-weight: 500;  text-decoration: none; cursor: pointer;">Списки</a>
  {% endblock %}
  {% block content %}
 
 <form action="/tasks/create/{{ list_to_open.id }}/" method="post">
     {% csrf_token %}
-    <h1> Список ID == {{ list_id }} </h1>
-    <input type="text" name="text">
-    <input type="submit" value="Добавить задачу">
+    <h1 style="color: green;"> Список ID: {{ list_id }} </h1>
+    <input type="text" name="text" style="font-size:40px;  color: green; border: none; padding: 5px 10px; border-radius: 15px; height: 100px; width: 800px;">
+    <input type="submit" value="Добавить задачу" style="font-size:40px; background-color: grey; cursor: pointer;  color: orange; border: none; padding: 5px 10px; border-radius: 15px; height: 100px; width: 400px;">
 </form>
 
 <table>
@@ -17,34 +17,34 @@
     <tr>
         <th>Текст задачи</th>
         <th>Статус</th>
-        <th>Действия</th>
+        <th >Действия</th>
     </tr>
     </thead>
     {% for t in tasks %}
 
         <tr>
-            <td style="border: 1px solid grey;">  {{ t.text }}</td>
+            <td style="border: 1px solid grey; color: black; padding: 0px 20px 0px 20px;">  {{ t.text }}</td>
             <td style="border: 1px solid grey;">
                 {% if t.is_completed == True %}
                     <p><span
-                            style="width: 30px; height: 30px; border-radius: 20px; background: green; color: greenyellow; ">Выполнено</span>
+                            style="width: 30px; margin: 0px 10px 0px 10px;  height: 30px; border-radius: 20px; background: green; color: greenyellow; ">Выполнено</span>
                     </p>
 
                 {% endif %}
                 {% if t.is_completed == False %}
                     <p><span
-                            style="width: 30px; height: 30px; border-radius: 20px; background: orange;color: yellow;">  Не Выполнено</span>
+                            style="width: 30px; height: 30px; border-radius: 20px; background: orangered;: yellow;">  Не Выполнено</span>
                     </p>
 
 
                 {% endif %}
             </td>
-            <td style="border: 1px solid grey;"><a href="/tasks/{{ t.id }}/status/{{ list_to_open.id }}/">Изменить
+            <td style="border: 1px solid grey;"><a style=" text-decoration: none; color: orange;  padding: 0px 20px 0px 20px;" href="/tasks/{{ t.id }}/status/{{ list_to_open.id }}/">Изменить
                 статус</a></td>
 
             {#<div  style="width: 30px; height: 30px; border-radius: 20px; background: green; transition: all 1s ease-out;"></div>#}
-            <td style="border: 1px solid grey;"><a href="/tasks/{{ t.id }}/delete/">Удалить задачу</a></td>
-          <td style="border: 1px solid grey;"><a href="/tasks/{{ t.id }}/move/">Переместить задачу</a></td>
+            <td style="border: 1px solid grey;"><a href="/tasks/{{ t.id }}/delete/" style="color: red; text-decoration: none;padding: 0px 20px 0px 20px;">Удалить задачу</a></td>
+          <td style="border: 1px solid grey;"><a href="/tasks/{{ t.id }}/move/" style=" color: yellow; text-decoration: none;  padding: 0px 20px 0px 20px;">Переместить задачу</a></td>
 
 
         </tr>

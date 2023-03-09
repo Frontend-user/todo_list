@@ -1,16 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends "Api/base.html" %}
 
-<a href="/lists/">Списки</a>
-<br>
-{#<a href="/tasks/">Все Задачи</a>#}
-</body>
-</html>
+{#<a href="/lists/"  style="color: #99970d;  font-size: 180px; font-weight: 500; margin-top: 2000px; text-decoration: none; cursor: pointer;">Списки</a>#}
+  {% block nav %}
+<a  style=" margin-left: 500px; color: #99970d;  font-size: 180px; font-weight: 500;  text-decoration: none; cursor: pointer;" href="/lists/">Списки</a>
+  {% endblock %}
