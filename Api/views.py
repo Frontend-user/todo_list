@@ -72,7 +72,7 @@ def list_open(request, list_id):
     list_to_open = ListModel.objects.get(id=list_id)
     list_tasks = TaskModel.objects.filter(list_id=list_to_open.id)
     return render(request, 'Api/list_open.html',
-                  {'list_to_open': list_to_open.dict(), 'tasks': list_tasks, 'list_id': list_id, })
+                  {'list_to_open': list_to_open.dict(), 'tasks': list_tasks, 'list_id': list_id })
 
 
 def base(request):

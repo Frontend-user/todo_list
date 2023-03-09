@@ -7,7 +7,7 @@
 
     <form action="/tasks/create/{{ list_to_open.id }}/" method="post">
         {% csrf_token %}
-        <h1 class="list_id_text"> Название Списка : {{ list_id }} </h1>
+        <h1 class="list_id_text"> Название Списка : {{ list_to_open.name }} </h1>
         <input type="text" name="text" class="list_input">
         <input type="submit" value="Добавить задачу" class="list_submit"></form>
 
